@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Exo+2:wght@300;400;500;600&display=swap');
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    font-family: 'Exo 2', "Helvetica Neue", Helvetica, -apple-system, BlinkMacSystemFont, sans-serif;
+    @apply antialiased min-h-screen text-foreground bg-background;
+    letter-spacing: 0.02em;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: 'Orbitron', 'Helvetica Neue', Helvetica, sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+  }
+
+  .card-content {
+    font-family: 'Exo 2', 'Helvetica Neue Light', Helvetica, sans-serif;
+    font-weight: 300;
+  }
+
+  .btn-glow {
+    animation: pulse 2s infinite;
+    box-shadow: 0 0 10px rgba(139, 65, 152, 0.7);
+  }
+
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 10px rgba(139, 65, 152, 0.7);
+    }
+
+    50% {
+      box-shadow: 0 0 20px rgba(139, 65, 152, 0.9);
+    }
+
+    100% {
+      box-shadow: 0 0 10px rgba(139, 65, 152, 0.7);
+    }
+  }
+
+  @keyframes glow {
+
+    0%,
+    100% {
+      text-shadow: 0 0 5px rgba(255, 255, 255, 0.8),
+        0 0 10px rgba(255, 255, 255, 0.5),
+        0 0 15px rgba(128, 0, 128, 0.5),
+        0 0 20px rgba(128, 0, 128, 0.3);
+    }
+
+    50% {
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.9),
+        0 0 20px rgba(255, 255, 255, 0.6),
+        0 0 30px rgba(128, 0, 128, 0.6),
+        0 0 40px rgba(128, 0, 128, 0.4);
+    }
+  }
+
+  .star-glow {
+    filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.7));
+  }
+
+  .nav-button {
+    transition: all 0.3s ease-in-out;
+  }
+
+  .nav-button:hover {
+    transform: translateY(-2px);
+  }
+
+  .nav-button.active {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(139, 65, 152, 0.4);
+  }
+
+  .futuristic-header {
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+    line-height: 1.2;
+    font-size: 3em;
+  }
+
+  .glow-text {
+    animation: glow 3s ease-in-out infinite;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
+      0 0 20px rgba(255, 255, 255, 0.5),
+      0 0 30px rgba(128, 0, 128, 0.5),
+      0 0 40px rgba(128, 0, 128, 0.3);
+  }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+}
